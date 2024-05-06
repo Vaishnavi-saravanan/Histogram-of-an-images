@@ -25,27 +25,76 @@ The Histogram of gray scale image and color image is shown.
 
 
 ## Program:
-```python
-# Developed By: 
-# Register Number: 
 
+# Developed By: VAISHNAVI S
+# Register Number: 212222230165
 
+```
+import cv2
+import matplotlib.pyplot as plt
+gray_image = cv2.imread("doggray.jpeg")
+color_image = cv2.imread("vulture1.jpeg",-1)
+cv2.imshow("Gray Image",gray_image)
+cv2.imshow("Colour Image",color_image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
 
+```
+import numpy as np
+import cv2
+Gray_image = cv2.imread("doggray.jpeg")
+Color_image = cv2.imread("vulture1.jpeg")
+import matplotlib.pyplot as plt
+gray_hist = cv2.calcHist([Gray_image],[0],None,[256],[0,256])
+color_hist = cv2.calcHist([Color_image],[0],None,[256],[0,256])
+plt.figure()
+plt.imshow(Gray_image)
+plt.show()
+plt.title("Histogram")
+plt.xlabel("Grayscale Value")
+plt.ylabel("Pixel Count")
+plt.stem(gray_hist)
+plt.show()
+```
 
+```
+plt.imshow(Color_image)
+plt.show()
+plt.title("Histogram of Color Image - Green Channel")
+plt.xlabel("Intensity Value")
+plt.ylabel("Pixel Count")
+plt.stem(color_hist)
+plt.show()
+cv2.waitKey(0)
+```
 
-
+```
+import cv2
+gray_image = cv2.imread("doggray.jpeg",0)
+cv2.imshow('Grey Scale Image',gray_image)
+equ = cv2.equalizeHist(gray_image)
+cv2.imshow("Equalized Image",equ)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 ```
 ## Output:
 ### Input Grayscale Image and Color Image
+![313937355-acd9c546-a6aa-465c-8a4e-17d24f2506a5](https://github.com/Vaishnavi-saravanan/Histogram-of-an-images/assets/118541897/91d64ec2-3115-4bbd-a014-572e184a2168)
 
 
 ### Histogram of Grayscale Image and any channel of Color Image
+GRAYSCALE IMAGE
+![313937427-a845898a-db5c-440f-a6b5-c78c66871bca](https://github.com/Vaishnavi-saravanan/Histogram-of-an-images/assets/118541897/6afdfc4f-55fe-4a05-9886-dc63d0ea22fb)
+![313937427-a845898a-db5c-440f-a6b5-c78c66871bca](https://github.com/Vaishnavi-saravanan/Histogram-of-an-images/assets/118541897/77273e50-cfdc-4d1d-82eb-4b378d641b6e)
+COLOR IMAGE
+![313937457-543636f8-140b-4f59-acfb-eb5a93acb9ce](https://github.com/Vaishnavi-saravanan/Histogram-of-an-images/assets/118541897/42d66736-f0bf-4ac9-8d4d-2488cbfedcad)
 
 
 
 ### Histogram Equalization of Grayscale Image.
 
-
+![313937507-2eaad6aa-e42f-4cb5-b066-bfae60fe5a6d](https://github.com/Vaishnavi-saravanan/Histogram-of-an-images/assets/118541897/52c698ba-beab-42f2-8c62-a5d66e16dc5b)
 
 
 ## Result: 
